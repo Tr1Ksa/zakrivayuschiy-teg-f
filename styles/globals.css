@@ -9,7 +9,10 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
+  padding: 0;
+  min-inline-size: 375px;
+  min-block-size: 100dvb;
 }
 
 h1,
