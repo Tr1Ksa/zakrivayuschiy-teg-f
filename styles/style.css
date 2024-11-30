@@ -18,36 +18,31 @@
   font-family: var(--font-family), sans-serif;
   font-size: var(--font-size);
   background-color: var(--bg-color);
+ /* background-repeat: repeat;*/
+  background-position: center;
   min-inline-size: 320px;
   min-block-size: 100dvb;
  /* background-image: var(--bg-image);*/
   font-variation-settings: var(--card-text-weight);
- /* background-repeat: repeat;*/
-  background-position: center;
  /* background-attachment: fixed;*/
 }
 
 .header {
   display: grid;
-  width: 100%;
-  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
   gap: 20px;
+  width: 100%;
+  margin: 100px 0px 100px;
   border: 2px solid var(--themes-main-color);
-  background-color: #fff;
- /* width: clamp(375px, 100%, 1140px); /* ширина карточки */
   font-family: var(--accent-font-family);
   font-weight: var(--card-text-weight);
   line-height: normal;
   text-transform: uppercase;
-  margin: 102px 2px 104px;
-}
-
-.title-content {
-  
+  background-color: #fff;
 }
 
 .header-title {
-  padding-top: 120px;
+  padding: 120px 0 0;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
 }
 
@@ -58,10 +53,87 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
-
-@media (min-width: 1140px) {
-  .header {
-    width: clamp(100%, 696px);
-  }
+.content {
+  display: grid;
+  gap: 50px;
+  padding: 0;
 }
 
+.content-section {
+  width: clamp(375px, 100%, 696px);
+}
+
+.post-block {
+  display: flex;
+  flex-direction: column;
+  border: var(--main-border);
+}
+
+.post-title {
+  align-self: stretch;
+  font-weight: var(--card-header-weight);
+  font-size: var(--font-size);
+}
+
+.post-image {
+  /*
+  min-height: 100%;
+  object-fit: cover;
+  inline-size: 100%;*/
+  border-top: var(--main-border);
+  
+}
+
+
+.post-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, min-content);
+  gap: 25px;
+  padding: 20px;
+}
+
+.post-text {
+  grid-column: 1 / 3;
+}
+
+.post-button {
+  grid-column: 2 / 2;
+  display: grid;
+  grid-template-columns: repeat(2, min-content);
+  gap: 12px;
+}
+
+.post-button svg {
+
+
+}
+
+
+button {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 130px;
+  height: 38px;
+  padding: 9px 17px;
+}
+
+
+
+@media (min-width: 1140px) {
+  /*.content-section {
+    max-width: 696px;
+  }*/
+ /* .header {
+    width: clamp(100%, 696px);
+  }*/
+  .header-title {
+    margin-bottom: 8px;
+    padding: 128px 0 0;
+  }
+
+
+}

@@ -9,4 +9,5 @@
   --card-header-weight: 700;
   --card-text-weight: 400;
   --bg-image: url(../images/background.png);
+  --main-border: 2px solid #000;
 }
