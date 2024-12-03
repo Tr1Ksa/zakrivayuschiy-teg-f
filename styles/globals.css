@@ -11,8 +11,7 @@
 body {
   margin: 0 auto;
   padding: 0;
-  min-inline-size: 375px;
-  min-block-size: 100dvb;
+  min-inline-size: 320px;
 }
 
 h1,
