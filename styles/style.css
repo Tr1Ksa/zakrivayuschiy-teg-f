@@ -19,12 +19,30 @@
   font-size: var(--font-size);
   background-color: var(--bg-color);
   background-image: var(--bg-image);
-   background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: var(--card-text-weight);
+}
+/*
+/* Стили фона для третьего градиента */
+.page::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #e7e7e7;
+  z-index: -1;
+}
+
+.page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a 100%);
+  mix-blend-mode: multiply; /* Усиливает эффект */
+  z-index: -1;
 }
 
 .header {
@@ -72,11 +90,44 @@
 
 .post-title {
   display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin: 5px 10px 5px;
   font-weight: var(--card-header-weight);
   font-size: var(--font-size);
-  flex-shrink: 0;
-  margin: 5px 10px 5px;
-  align-items: center;
+}
+
+.card-label {
+  position: relative;
+  display: grid;
+}
+
+.watermark {
+  position: absolute;
+  right: 0;
+  margin-top: 25px;
+  margin-inline-end: 11px;
+  opacity: 0.8;
+  color: var(--themes-main-color, #000);
+  font-family: var(--accent-font-family);
+  font-weight: var(--card-text-weight);
+  font-size: 14px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px var(--text-shadow, #FFF);
+ /*background-blend-mode: hard-light; 
+  mix-blend-mode: hard-light;*/
+}
+
+@supports (text-stroke: 1px var(--text-shadow, #FFF)) {
+  .watermark {
+    text-stroke: 1px var(--text-shadow, #FFF);
+  }
+}
+
+@supports (not (property: text-stroke)) {
+  .watermark {
+    text-shadow: 0 0 1px var(--text-shadow);
+  }
 }
 
 .post-image {
@@ -95,7 +146,7 @@
 
 .post-button {
   display: grid;
-  grid-template-columns:repeat(2, min-content);
+  grid-template-columns: repeat(2, min-content);
   grid-column: 2 / 2;
   justify-content: end;
   align-items: center;
@@ -104,12 +155,16 @@
   margin-bottom: 25px;
 }
 
+.like-icon {
+  cursor: pointer;
+}
+
 .card__icon-button {
   display: grid;
-  border: none;
-  background-color: var(--bg-color);
   justify-content: center;
   align-items: end;
+  border: none;
+  background-color: var(--bg-color);
 }
 
 .post-block .like-icon {
@@ -127,46 +182,89 @@
   height: 38px;
   padding: 9px 17px;
   background-color: var(--bg-color);
+  cursor: pointer;
 }
 
 .button__text {
   font-family: var(--accent-font-family);
   font-size: 14px;
   line-height: 90%;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .footer {
-  display: grid;
-  background-color: var(--bg-color);
+  display: flex;
   justify-content: center;
   align-items: center;
+  padding-block-start: 54px;
 }
 
 .footer .post-button {
-  display: grid;
-  grid-template-columns: min-content;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  border: var(--main-border);
+  gap: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
   width: 306px;
-  margin: 54px 33px 102px;
-}
-
-.footer .like-icon {
-  width: 39px;
+  margin: 0px 33px 102px;
+  border: var(--main-border);
+  background-color: var(--bg-color);
+  cursor: pointer;
 }
 
 .footer button {
   border: none;
+  background-color: var(--bg-color);
 }
 
+.floppy {
+ width: 39px;
+ height: 39px;
+}
+
+dialog {
+ /* position: absolute;*/
+  border: var(--main-border);
+  max-inline-size: 341px;
+  min-inline-size: 195px;
+  background-color: var(--bg-color);
+}
+
+dialog {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  transition: opacity 0.3s ease-in-out;
+}
+
+dialog:not([open]) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+dialog h3 {
+  color: var(--themes-main-color, #000);
+  font-family: var(--accent-font-family);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  text-transform: uppercase;
+}
+
+dialog::backdrop {
+  background-color: var(--themes-main-color);
+  opacity: 0.75;
+} 
 
 
 
-
-
-@media (min-width: 1140px) {
+@media (min-width: 1440px) {
   /*.content-section {
     max-width: 696px;
   }*/
@@ -178,6 +276,10 @@
   }
   .title-text {
     margin-bottom: 8px;
+  }
+  .watermark {
+    position: absolute;
+    margin-inline-end: 25px;
   }
   .footer .post-button {
   

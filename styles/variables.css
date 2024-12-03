@@ -10,4 +10,11 @@
   --card-text-weight: 400;
   --bg-image: url(../images/background.png);
   --main-border: 2px solid #000;
+  --text-shadow: #fff;
+  --bg-image: repeating-linear-gradient(
+      2px,
+      #d3d3d3,
+      transparent 2px,
+      repeat
+    );
 }
