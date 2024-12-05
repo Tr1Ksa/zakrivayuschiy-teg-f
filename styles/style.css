@@ -91,58 +91,6 @@
   transition: filter 2s ease;
 }
 
-.inspiration:hover {
-  -webkit-filter: opacity(0.5);
-  filter: opacity(0.5);
-}
-
-.fear:hover {
-  -webkit-filter: invert(1);
-  filter: invert(1);
-}
-
-.happy {
-  -webkit-filter: rayscale(1);
-  filter: grayscale(1);
-}
-
-.happy:hover {
-  filter: none;
-}
-
-.ideal {
-  -webkit-filter: blur(4px);
-  filter: blur(4px);
-}
-
-.ideal:hover {
-  filter: none;
-}
-
-.family:hover {
-  -webkit-filter: hue-rotate(300deg);
-  filter: hue-rotate(300deg);
-}
-
-.rethinking:hover {
-  -webkit-filter: brightness(.5);
-  filter: brightness(.5);
-}
-
-.self-discipline:hover {
-  -webkit-filter: grayscale(100%) drop-shadow(16px 16px 10px black);
-  filter: grayscale(100%) drop-shadow(16px 16px 10px black);
-}
-
-.development:hover {
-  -webkit-filter: saturate(200%);
-  filter: saturate(200%);
-}
-
-
-
-
-
 
 .watermark {
   position: absolute;
@@ -156,6 +104,7 @@
   font-size: 14px;
   text-transform: uppercase;
   -webkit-text-stroke: 1px var(--text-shadow, #FFF);
+  z-index: 2;
  /*background-blend-mode: hard-light; 
   mix-blend-mode: hard-light;*/
 }
@@ -170,6 +119,54 @@
   .watermark {
     text-shadow: 0 0 1px var(--text-shadow);
   }
+}
+
+.inspiration {
+  -webkit-filter: opacity(0.8);
+  filter: opacity(0.8);
+}
+
+.fear {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+.happy {
+  -webkit-filter: sepia(0.8);
+  filter: sepia(0.8);
+}
+
+/*.happy:hover {
+  filter: none;
+}*/
+
+.ideal {
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+}
+
+/*.ideal {
+  filter: none;
+}*/
+
+.family {
+  -webkit-filter: hue-rotate(300deg);
+  filter: hue-rotate(300deg);
+}
+
+.rethinking {
+  -webkit-filter: brightness(.5);
+  filter: brightness(.5);
+}
+
+.self-discipline {
+  -webkit-filter: grayscale(100%) drop-shadow(16px 16px 10px black);
+  filter: grayscale(100%) drop-shadow(16px 16px 10px black);
+}
+
+.development {
+  -webkit-filter: saturate(200%);
+  filter: saturate(200%);
 }
 
 .post-image {
@@ -290,9 +287,11 @@
 }
 
 @keyframes heart-scale {
-  from { transform: scale(1.05); }
+  from { transform: scale(1.05);
+  }
   to {
-  fill: var(--heart-color-red); transform: scale(1); }
+  fill: var(--heart-color-red); transform: scale(1);
+  }
 }
 
 .like-icon.is-liked .sparks {
