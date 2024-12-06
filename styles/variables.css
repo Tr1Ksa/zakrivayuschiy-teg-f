@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --font-family: 'Inter', sans-serif;
-  --accent-font-family: 'Press Start 2P';
+  --font-family: 'Inter-Variable', sans-serif;
+  --accent-font-family: 'Press Start 2P', fantasy;
   --text-color: ;
   --themes-main-color: #000;
   --font-size: 18px;
@@ -17,6 +17,5 @@
   --heart-color-red: #FF0000;
   --heart-color-contour: #000000;
   --heart-color-core: #ffffff;
-  --post-title-font-weight: 700;
   --button-text-color: #ffffff;
 }
