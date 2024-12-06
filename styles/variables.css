@@ -10,9 +10,7 @@
   --bg-image: url(../images/background.png);
   --main-border: 2px solid #000;
   --text-shadow: #fff;
-  --bg-image: repeating-linear-gradient(to right, #d3d3d3 0px, transparent 0px,#d3d3d3 2px,transparent 2px),
-              repeating-linear-gradient(to bottom, #d3d3d3 0px, transparent 0px,#d3d3d3 2px,transparent 2px),
-              linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  --bg-image: repeating-linear-gradient(to left, #d3d3d3 0 2px, #d3d3d300 2px 4px), repeating-linear-gradient(to bottom, #d3d3d3 0 2px, #d3d3d300 2px 4px), linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
   --heart-color-contour: #000000;
   --heart-color-core: #fff;
   --heart-color-active: #FF0000;
