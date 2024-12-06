@@ -16,19 +16,7 @@
     local('Inter-Variable'),
     url(../fonts/Inter-Variable.woff2) format('woff2 supports variations'),
     url(../fonts/Inter-Variable.woff2) format('woff2 woff2-variations');
-  /*font-variation-settings: 'wght' 400, 'wght' 700;*/
   font-weight: 400 700 785;
   font-style: normal;
   font-display: swap;
 }
-/*
-@font-face {
-  font-family: 'Inter';
-  src: 
-  local('Inter'),
-  url(../fonts/Inter-Variable.woff2) format('woff2 supports variations'),
-  url(../fonts/Inter-Variable.woff2) format('woff2 woff2-variations');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}*/
