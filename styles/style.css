@@ -356,7 +356,6 @@
   mix-blend-mode: difference;
 }
 
-
 .dialog {
   position: fixed;
   inset: 0;
@@ -372,12 +371,6 @@
   transition: opacity 0.3s ease-in-out;
   max-inline-size: 355px;
 }
-/*
-.dialog[open] {
-  display: grid;
-  grid-template-rows: repeat(2, min-content);
-  gap: 30px;
-}*/
 
 .dialog::backdrop {
   opacity: 0.75;
@@ -386,16 +379,13 @@
 
 .dialog__content {
   display: flex;
-  justify-items: end;
   align-items: center;
   gap: 16px;
 }
 
 .floppy {
   flex-shrink: 0;
-  margin-block: 12px;
-  inline-size: 39px;
-  block-size: 39px;
+  block-size: 2.786em;
 }
 
 .dialog__button {
@@ -404,54 +394,6 @@
   inline-size: 100%;
 }
 
-
-/*
-dialog {
-  position: fixed;
-  inset: 0;
-  display: grid;
-  flex-direction: column;
-  flex-wrap: wrap;
-  grid-template-columns: min-content 1fr;
-  justify-content: center;
-  align-items: center;
-  row-gap: 30px;
-  max-inline-size: 357px;
-  border: var(--main-border);
-  padding: 30px;
-  background-color: var(--bg-color);
-  transition: opacity 0.3s ease-in-out;
-  overflow: hidden;
-}
-
-dialog .button_type_save {
-  padding-left: 0;
-}
-
-dialog .floppy {
-  padding: 0;
-  block-size: 2.17em;
-  mix-blend-mode: none;
-}
-
-.ok {
-  display: block;
-  grid-column: 1 / -1;
-  margin: 0 auto;
-}
-
-dialog .button__text {
-  text-transform: uppercase;
-}
-
-.dialog-button {
-  min-width: 293px;
-  height: 38px;
-  border: var(--main-border);
-  padding: 0;
-  background-color: var(--bg-color);
-}
-*/
 .dialog:not([open]) {
   opacity: 0;
   pointer-events: none;
