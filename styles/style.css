@@ -196,7 +196,7 @@
   cursor: pointer;
   background-color: var(--bg-color), #fff;
   appearance: none;
-  transition: border 0.3s ease-in-out;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus-visible {
@@ -205,7 +205,6 @@
 
 .like-icon {
   cursor: pointer;
-  transform-origin: center;
 }
 
 .contour {
@@ -254,7 +253,7 @@
 
 .like-icon.is-liked .core {
   fill: var(--heart-color-active);
-  transition: fill 0.3s 0.06s linear;
+  transition: fill 0.3s 0.05s linear;
 }
 
 .like-icon.is-liked .main-body {
@@ -262,9 +261,10 @@
   transition: fill 0.3s 0.06s linear;
 }
 
-.heart {
+.like-icon .heart {
   box-sizing: border-box;
   transform: scale(1);
+  transform-origin: center;
 }
 
 .like-icon.is-liked .heart {
@@ -371,6 +371,7 @@ dialog {
   padding: 30px;
   background-color: var(--bg-color);
   transition: opacity 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 dialog .button_type_save {
